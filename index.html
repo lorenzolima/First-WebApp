@@ -1,0 +1,82 @@
+<!--
+    LOOK LOGOS IDEA https://looka.com/editor/83857133
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Control</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,300&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1 id="logo">My Finance Control</h1>
+    </header>
+
+    <main class="container">
+        <section id="balance">
+            <h2>Balance</h2>
+
+            <div id="cards">
+                <div class="card card-incomes">
+                    <h3>Incomes</h3>
+                    <p>R$ 6.500,00</p>
+                </div>
+
+                <div class="card card-expenses">
+                    <h3>Expenses</h3>
+                    <p>R$ 739,97</p>
+                </div>
+
+                <div class="card card-total">
+                    <h3>Total</h3>
+                    <p>R$ 5760,03</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="transactions">
+            <h2>Transactions</h2>
+
+            <table id="data-table">
+                <thead>
+                    <tr><!--tr = Table Row-->
+                        <th>Description</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+        
+                <tbody>
+                    <tr class='items'>
+                        <td class="description">Elaboração WebSite</td>
+                        <td class="income">R$ 3.500,00</td>
+                        <td class="date">05/02/2022</td>
+                    </tr>
+                    <tr class='items'>
+                        <td class="description">Conta de Luz</td>
+                        <td class="expense">- R$ 500,00</td>
+                        <td class="date">10/02/2022</td>
+                    </tr>
+                    <tr class='items'>
+                        <td class="description">Internet</td>
+                        <td class="expense">- R$ 239,97</td>
+                        <td class="date">10/02/2022</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>Developed by Lorenzo Gonçalves Lima</p>
+    </footer>
+</body>
+</html>
