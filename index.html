@@ -1,4 +1,6 @@
-<!-- Prototype's html -->
+<!--
+    LOOK LOGOS IDEA https://looka.com/editor/83857133
+-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,75 +8,124 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance Control</title>
+    <title>MyControl - Take care of your present</title>
+    <link rel="icon" href="./assets/test-icon.png" type="image/icon type">
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,300&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Indie+Flower&family=Montserrat:ital,wght@0,400;0,600;1,300&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <h1 id="logo">My Finance Control</h1>
+        <nav>
+            <a href="#" class="nav">
+                <span class="my-money">Home</span>
+            </a>
+            <a href="#" class="nav">
+                <span class="about">About</span>
+            </a>
+            <button class="only-breath-it">
+                <span class="front">Breath-It</span>
+            </button>
+        </nav>
+
+        <a href="http://127.0.0.1:5500/index.html" class='logo-a'>
+            <img class="logo" src="./assets/ur_bank_hz2.png" alt="breathIt">
+        </a>
+    
     </header>
 
     <main class="container">
-        <section id="balance">
-            <h2>Balance</h2>
-
+        <!--<img class="breathIt" src="./assets/breathIt.png" alt="breathIt"> -->
+        <section id="balance"></section>
+        
+            <h2 class="sr-only">Balance</h2>
             <div id="cards">
-                <div class="card card-incomes">
-                    <h3>Incomes</h3>
-                    <p>R$ 6.500,00</p>
-                </div>
+                <section id="group">
+                    <div class="card card-incomes">
+                        <h3>
+                            <span>Incomes</span>
+                            <img src="./assets/income.svg" alt="income-icon">
+                        </h3>
+                        <p id="incomeDisplay">R$ 0,00</p>
+                    </div>
 
-                <div class="card card-expenses">
-                    <h3>Expenses</h3>
-                    <p>R$ 739,97</p>
-                </div>
+                    <div class="card card-expenses">
+                        <h3>
+                            <span>Expenses</span>
+                            <img src="./assets/expense.svg" alt="expense-icon">
+                        </h3>
+                        <p id="expenseDisplay">R$ 0,00</p>
+                    </div>
+                </section>
 
                 <div class="card card-total">
-                    <h3>Total</h3>
-                    <p>R$ 5760,03</p>
+                    <h3>
+                        <span>Total</span>
+                        <img src="./assets/total.svg" alt="total-icon">
+                    </h3>
+                    <p id="totalDisplay">R$ 0,00</p>
                 </div>
             </div>
         </section>
 
-        <section id="transactions">
-            <h2>Transactions</h2>
+        <section id="data-table">
+            <h2 class="sr-only">Transactions</h2>
+            
+            <a href="#" onclick="Modal.open()" class="button new">+ New Transaction</a>
 
-            <table id="data-table">
+            <table>
                 <thead>
                     <tr><!--tr = Table Row-->
                         <th>Description</th>
                         <th>Value</th>
                         <th>Date</th>
+                        <th></th>
                     </tr>
                 </thead>
         
                 <tbody>
-                    <tr class='items'>
-                        <td class="description">Elaboração WebSite</td>
-                        <td class="income">R$ 3.500,00</td>
-                        <td class="date">05/02/2022</td>
-                    </tr>
-                    <tr class='items'>
-                        <td class="description">Conta de Luz</td>
-                        <td class="expense">- R$ 500,00</td>
-                        <td class="date">10/02/2022</td>
-                    </tr>
-                    <tr class='items'>
-                        <td class="description">Internet</td>
-                        <td class="expense">- R$ 239,97</td>
-                        <td class="date">10/02/2022</td>
-                    </tr>
                 </tbody>
             </table>
+            <hr class="mb0">
         </section>
     </main>
 
+    <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h2>New Transaction</h2>
+                <form action="" onsubmit="Form.submit(event)">
+                    <div class="input-group">
+                        <label class="sr-only" for="description">Description</label>
+                        <input type="text" id="description" name="description" placeholder="Description">
+                    </div>
+
+                    <div class="input-group">
+                        <label class="sr-only" for="amount">Value</label>
+                        <input type="number" id="amount" name="amount" placeholder="0.00" step="0.10">
+                        <small class="help">Use the negative sign (-) for Expenses</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="sr-only" for="date">Date</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+
+                    <div class="input-group actions">
+                        <a href="#" onclick="Modal.close()" class="button cancel">Cancel</a>
+                        <button class="button save">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <p>Developed by Lorenzo Gonçalves Lima</p>
+        <p>Developed by Lorenzo Gonçalves Lima | Inspired by RocketSeat</p>
     </footer>
+
+    <script src="./scripts.js"></script>
 </body>
 </html>
