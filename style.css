@@ -1,7 +1,13 @@
 /* >>>>>>>>>>>>>>>>>> GLOBAL <<<<<<<<<<<<<<<<<<*/
 :root {
-    --color-dark: #171f24; 
+    --blue: #4973F2;
+    --green: #4AD988;
+    --white: #F2F2F2;
+    --yellow: #F2C641;
+    --lightyellow: #f5da8a;
+    --red: #bc4749;
 }
+
 
 * {
     margin: 0;
@@ -9,30 +15,135 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 93.75%;
+}
+
 body {
-    background: #f0f2f5;
+    background: var(--white);
     font-family: 'Montserrat';
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 .container {
     width: min(90vw, 800px);
     margin: auto;
 }
+/* ------------------ Navigation Buttons ------------------ */
 
-header {
-    text-align: center;
-    padding: 3rem 0 10rem;
+nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    padding: .85rem 1rem;
+    justify-content: end;
+    align-items: center;
 
-    background: #386641;
+    background-color: var(--white);
+    box-shadow: 2px 2px 3px 1px#adadad7a;
 }
 
-#logo{
-    font-weight: 100;
+.nav {
+    text-decoration: none;
+    font-size: 1rem;
 
-    color: rgba(255, 255, 255, 0.89);
+    color: black;
+}
+
+.front {
+    transition:
+        transform
+        600ms
+        cubic-bezier(.3, .7, .4, 1);
+}
+.only-breath-it:hover .front {
+    transform: translateY(-3px);
+    transition:
+        transform
+        250ms
+        cubic-bezier(.3, .7, .4, 1.5);
+}
+.only-breath-it:active .front {
+    transform: translateY(-1px);
+    transition: transform 34ms;
+}
+.only-breath-it {
+    background: #363432;
+    border: none;
+    border-radius: .85rem;
+    padding: 0;
+    cursor: pointer;
+}
+.front {
+    display: block;
+    padding: 0.45rem 0.55rem;
+    width: 5rem;
+    border-radius: .85rem;
+    font-size: 0.85rem;
+    font-family: 'Indie Flower';
+    transform: translateY(0px);
+
+
+    background: var(--blue);
+    color: var(--white);
+}
+.only-breath-it:active .front {
+    transform: translateY(-2px);
+}
+.only-breath-it:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* ------------------ TITLE ------------------ */
+a.logo-a {
+    position: relative;
+    display: inline-flex;
+    height: 20rem;
+    left: 4rem;
+    top: 2rem;
+    padding-bottom: 2rem;
+
+}
+
+/* -------------- Links & Buttons ------------- */
+.new {
+    
+    font-weight: bolder;
+    font-size: 16px;
+
+    text-decoration: none;
+    color: var(--yellow);
+}
+.new:hover {
+    color: var(--lightyellow);
+}
+.button.new {
+    display: inline-block;
+    margin-top: 2rem;
+    margin-bottom: .4rem;
 }
 
 /* >>>>>>>>>>>>>>>>>> MAIN <<<<<<<<<<<<<<<<<<*/
+main {
+    padding-top: 90px;
+}
+
+.breathIt {
+    position: absolute;
+    left: 50px;
+}
 
 /* ------------------ Titles ----------------- */
 h2 {
@@ -50,56 +161,80 @@ h2 {
 }
 
 #balance h2{
-    color: white;
+    font-weight: normal;
+    color: var(--white);
 }
 
 /* ------------------ Cards ----------------- */
-.card {
-    padding: 1.5rem 2rem;
-    border-radius: .65rem;
-    margin-bottom: 1rem;
 
-    background: rgb(255, 255, 255);
-    color: var(--color-dark);
+#cards {
+    position: relative;
+    padding: 2.5rem;
+    margin-top: 6rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+    background: var(--white);
+
+    border-radius: 1.85rem;
+    box-shadow: .65rem .65rem var(--blue);
 }
-
 #cards .card-total{
-    background: #6a994e;
-    color: rgba(255, 255, 255, 0.932);
+    background: var(--white); /* #F2CB05*/
+    color: #232426;
+    box-shadow: .65rem .65rem var(--green);
 }
-
 #cards h3 {
     font-weight: normal;
-    font-size: 1.05rem;
+    font-size: 1.25rem;
+}
+#cards p {
+    font-weight: bolder;
+    font-size: 1.5rem;
 }
 
-#cards p {
+.card {
+    padding: 1rem 1.5rem;
+    border-radius: .65rem;
+    margin-bottom: 1rem;
+    border: 2px solid #363432;
+
+    background: var(--white);
+    color: var(--color-dark);
+}
+.card h3{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-weight: normal;
-    font-size: 1.46rem;
+    font-size: 1rem;
 }
 
 /* ------------------ Table Transactions ----------------- */
 #data-table {
-    width: 100%;
-    border-spacing: 0 0.25rem;
+    display: block;
+    overflow-x: auto;
 
     color: var(--color-dark);
+}
+table {
+    width: 100%;
+    border-spacing: 0 0.25rem;
 }
 
 table thead tr th:first-child,
 table tbody tr td:first-child {
-    border-radius: 0.5rem 0 0 0.5rem;
+    border-radius: .65rem 0 0 .65rem;
 }
 
 table thead tr th:last-child,
 table tbody tr td:last-child {
-    border-radius: 0 0.5rem 0.5rem 0;
+    border-radius: 0 .65rem .65rem 0;
 }
 
 table th{
     text-align: left;
     font-size: 1.05rem;
-    font-weight: bold;
+    font-weight: normal;
     padding: 1rem 2rem;
 
     background: white;
@@ -118,18 +253,181 @@ table tr.items{
 table tr.items:hover {
     opacity: 1;
 }
+table tr img {
+    width: 1.5rem;
+}
+table tr img:hover{
+    filter: grayscale(100%);
+}
 
 td.description {
     color: var(--color-dark);
 }
 td.expense{
-    color: #bc4749;
+    color: var(--red);
 }
 td.income{
-    color: #6a994e;
+    color: var(--green);
 }
 
-/* >>>>>>>>>>>>>>>>>> FOOTER <<<<<<<<<<<<<<<<<<*/
+/* >>>>>>>>>>>>>>>>>>>>> MODAL <<<<<<<<<<<<<<<<<<<<*/
+.modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal {
+    padding: 2rem;
+    max-width: 500px; 
+    width: 90%;
+    border-radius: 1.85rem;
+    box-shadow: .45rem .45rem var(--yellow);
+
+    background: var(--white);
+}
+.modal h2 {
+    font-weight: bolder;
+}
+
+/* -------------------- form -------------------- */
+#form {
+    max-width: 500px;
+}
+#form h2{
+    margin-top: 0;
+}
+
+input {
+    border: none;
+    border: 2px solid #363432;
+    border-radius: .65rem;
+    padding: 0.8rem;
+    width: 100%;
+}
+.input-group {
+    margin-top: 0.8rem;
+}
+.input-group small {
+    opacity: 0.65;
+}
+.input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.input-group.actions .button {
+    width: 40%;
+    height: 3rem;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+
+    border-radius: 0.85rem;
+    text-decoration: none;
+
+    color: white;
+}
+.input-group.actions .button.save {
+    border: none;
+
+    background: var(--yellow);
+}
+.input-group.actions .button.save:hover{
+    opacity: 0.75;
+
+}
+
+.input-group.actions .button.cancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+
+    border: 2px solid var(--red);
+
+    color: var(--red);
+    opacity: 0.70;
+}
+.input-group.actions .button.cancel:hover {
+    opacity: 1;
+}
+
+/* >>>>>>>>>>>>>>>>>>>> FOOTER <<<<<<<<<<<<<<<<<<<<*/
 footer {
     text-align: center;
+    opacity: 0.5;
+    font-size: 14px;
+
+    color: black;
+}
+
+hr {
+    margin-top: 22px;
+
+    border-top: 1px solid rgb(213, 220, 223);
+}
+
+/* >>>>>>>>>>>>>>>>>> RESPONSIVE <<<<<<<<<<<<<<<<<<*/
+@media(min-width: 800px) {
+    html {
+        font-size: 87.5%;
+    }
+
+    /* ------------------- nav ------------------- */
+    .nav {
+        font-size: 1.05rem;
+    }
+    .my-money,
+    .about,
+    .only-breath-it {
+        border-radius: .85rem;
+    }
+    .front {
+        padding: 0.55rem 0.65rem;
+        width: 6rem;
+        border-radius: .85rem;
+        font-size: 1.05rem;
+    }
+    /* ------------------------------------------- */
+
+    a.logo-a {
+        position: relative;
+        display: inline-flex;
+        height: 12rem;
+    }
+
+    #balance {
+        display: flex;
+    }
+
+    #cards .card-incomes,
+    #cards .card-expenses {
+        width: 335px;
+    }
+    #group {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer {
+        padding: 2.25rem 0.85rem 0 0;
+        font-size: 1rem;
+    }
 }
