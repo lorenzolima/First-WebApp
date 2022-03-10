@@ -8,8 +8,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyControl - Take care of your present</title>
-    <link rel="icon" href="./assets/test-icon.png" type="image/icon type">
+    <title>just.money - Take care of your present</title>
+    <link rel="icon" href="./assets/logo-justmoney.png" type="image/icon type">
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,21 +19,23 @@
 <body>
     <header>
         <nav>
-            <a href="#" class="nav">
-                <span class="my-money">Home</span>
-            </a>
-            <a href="#" class="nav">
-                <span class="about">About</span>
-            </a>
+            <div class="page-nav">
+                <a href="#" class="nav">
+                    <span class="my-money">Home</span>
+                </a>
+                <a href="#" class="nav">
+                    <span class="about">About</span>
+                </a>
+            </div>
+
             <button class="only-breath-it">
                 <span class="front">Breath-It</span>
             </button>
         </nav>
 
         <a href="http://127.0.0.1:5500/index.html" class='logo-a'>
-            <img class="logo" src="./assets/ur_bank_hz2.png" alt="breathIt">
+            <img class="logo" src="./assets/logo-justmoney90yellow.png" alt="breathIt">
         </a>
-    
     </header>
 
     <main class="container">
@@ -63,17 +65,16 @@
                 <div class="card card-total">
                     <h3>
                         <span>Total</span>
-                        <img src="./assets/total.svg" alt="total-icon">
+                        <img src="./assets/total.png" alt="total-icon">
                     </h3>
                     <p id="totalDisplay">R$ 0,00</p>
                 </div>
             </div>
         </section>
 
+        <a href="#" onclick="Modal.open()" class="button new">+ New Transaction</a>
         <section id="data-table">
             <h2 class="sr-only">Transactions</h2>
-            
-            <a href="#" onclick="Modal.open()" class="button new">+ New Transaction</a>
 
             <table>
                 <thead>
@@ -88,7 +89,6 @@
                 <tbody>
                 </tbody>
             </table>
-            <hr class="mb0">
         </section>
     </main>
 

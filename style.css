@@ -1,11 +1,24 @@
 /* >>>>>>>>>>>>>>>>>> GLOBAL <<<<<<<<<<<<<<<<<<*/
 :root {
-    --blue: #4973F2;
-    --green: #4AD988;
+    --blue: #2256F2;
+    --green: #04BF55;
+    --lightgreen: #06d45f;
     --white: #F2F2F2;
-    --yellow: #F2C641;
+    --yellow: #F2C641; /*#F2C641*/
     --lightyellow: #f5da8a;
     --red: #bc4749;
+    --r-localnav-height: 52px;
+    --r-localnav-stacked-height: 66px;
+    --r-localnav-gn-height: var(--r-globalnav-height, 44px);
+    --r-localnav-viewport-large-min-width: 1024px;
+    --r-localnav-viewport-large-query: (min-width: 1024px);
+    --r-localnav-viewport-medium-min-width: 834px;
+    --r-localnav-viewport-medium-max-width: 1023px;
+    --r-localnav-viewport-medium-query: (min-width: 834px);
+    --r-localnav-viewport-small-min-width: 320px;
+    --r-localnav-viewport-small-max-width: 833px;
+    --r-localnav-viewport-small-query: (min-width: 320px);
+
 }
 
 
@@ -40,20 +53,34 @@ body {
     width: min(90vw, 800px);
     margin: auto;
 }
-/* ------------------ Navigation Buttons ------------------ */
 
+header {
+    padding-bottom: 5rem;
+
+    background: linear-gradient(to left top, #f6d836, #f5d339, #f4cf3c, #f3ca3e, #f2c641);}
+/* ------------------ Navigation Buttons ------------------ */
 nav {
     position: relative;
     display: flex;
     flex-direction: row;
-    gap: 3rem;
-    padding: .85rem 1rem;
+    gap: 4rem;
+    padding: .85rem 2rem;
     justify-content: end;
     align-items: center;
 
     background-color: var(--white);
     box-shadow: 2px 2px 3px 1px#adadad7a;
 }
+
+nav .page-nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .nav {
     text-decoration: none;
@@ -82,7 +109,7 @@ nav {
 .only-breath-it {
     background: #363432;
     border: none;
-    border-radius: .85rem;
+    border-radius: 3rem;
     padding: 0;
     cursor: pointer;
 }
@@ -90,14 +117,18 @@ nav {
     display: block;
     padding: 0.45rem 0.55rem;
     width: 5rem;
-    border-radius: .85rem;
+    border-radius: 4rem;
     font-size: 0.85rem;
     font-family: 'Indie Flower';
+    font-weight: bolder;
     transform: translateY(0px);
 
 
-    background: var(--blue);
+    background: var(--green);
     color: var(--white);
+}
+.front:hover {
+    background: var(--lightgreen)
 }
 .only-breath-it:active .front {
     transform: translateY(-2px);
@@ -106,22 +137,24 @@ nav {
     outline: none;
 }
 
-/* ------------------ TITLE ------------------ */
+/* ------------------ Logo ------------------ */
 a.logo-a {
     position: relative;
     display: inline-flex;
-    height: 20rem;
-    left: 4rem;
-    top: 2rem;
-    padding-bottom: 2rem;
 
+    left: 1.75rem;
+    bottom: 2.75rem;
+    padding-bottom: 2rem;
+}
+a img {
+    width: 10rem;
+    height: 1.825rem;
 }
 
 /* -------------- Links & Buttons ------------- */
 .new {
-    
     font-weight: bolder;
-    font-size: 16px;
+    font-size: 1.5rem;
 
     text-decoration: none;
     color: var(--yellow);
@@ -144,6 +177,20 @@ main {
     position: absolute;
     left: 50px;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}  
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
 
 /* ------------------ Titles ----------------- */
 h2 {
@@ -169,20 +216,24 @@ h2 {
 
 #cards {
     position: relative;
-    padding: 2.5rem;
-    margin-top: 6rem;
-    margin-bottom: 2.5rem;
+    padding: 3rem;
+    bottom: 1rem;
     width: 100%;
     background: var(--white);
 
+    border: 2px solid #232426;
     border-radius: 1.85rem;
-    box-shadow: .65rem .65rem var(--blue);
+    box-shadow: .65rem .65rem #232426;
 }
 #cards .card-total{
-    background: var(--white); /* #F2CB05*/
+    background: var(--white);
     color: #232426;
     box-shadow: .65rem .65rem var(--green);
 }
+.card-total img {
+    width: 2.25rem;
+}
+
 #cards h3 {
     font-weight: normal;
     font-size: 1.25rem;
@@ -213,6 +264,8 @@ h2 {
 #data-table {
     display: block;
     overflow-x: auto;
+    overflow-y: visible;
+    max-height: 18rem;
 
     color: var(--color-dark);
 }
@@ -230,7 +283,6 @@ table thead tr th:last-child,
 table tbody tr td:last-child {
     border-radius: 0 .65rem .65rem 0;
 }
-
 table th{
     text-align: left;
     font-size: 1.05rem;
@@ -239,14 +291,12 @@ table th{
 
     background: white;
 }
-
 table td{
     font-weight: 100;
     padding: 1rem 2rem;
 
     background: white;
 }
-
 table tr.items{
     opacity: 0.65;
 }
@@ -259,7 +309,6 @@ table tr img {
 table tr img:hover{
     filter: grayscale(100%);
 }
-
 td.description {
     color: var(--color-dark);
 }
@@ -339,14 +388,13 @@ input {
     font-size: 16px;
     cursor: pointer;
 
-    border-radius: 0.85rem;
+    border-radius: 3rem;
     text-decoration: none;
 
     color: white;
 }
 .input-group.actions .button.save {
     border: none;
-
     background: var(--yellow);
 }
 .input-group.actions .button.save:hover{
@@ -360,28 +408,31 @@ input {
     align-items: center;
     width: 20%;
 
-    border: 2px solid var(--red);
+    /*border: 2px solid var(--red);*/
 
     color: var(--red);
-    opacity: 0.70;
+    opacity: 0.60;
 }
 .input-group.actions .button.cancel:hover {
     opacity: 1;
 }
 
 /* >>>>>>>>>>>>>>>>>>>> FOOTER <<<<<<<<<<<<<<<<<<<<*/
+
 footer {
+    position: relative;
+    top: 2rem;
+    width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
+    padding-top: 0.25rem;
+
     opacity: 0.5;
-    font-size: 14px;
+    font-size: 12px;
 
+    border-top: 1px solid rgb(203, 204, 204);
     color: black;
-}
-
-hr {
-    margin-top: 22px;
-
-    border-top: 1px solid rgb(213, 220, 223);
 }
 
 /* >>>>>>>>>>>>>>>>>> RESPONSIVE <<<<<<<<<<<<<<<<<<*/
@@ -390,20 +441,32 @@ hr {
         font-size: 87.5%;
     }
 
+    /* ------------------- logo ------------------- */
+    a.logo-a {
+        left: 4.5rem;
+        bottom: 3rem;
+    }
+    a img {
+        left: 12rem;
+        bottom: 3rem;
+        width: 20rem;
+        height: 3.75rem;
+    }
+
     /* ------------------- nav ------------------- */
+    nav {
+        padding: .85rem 4rem;
+    }
     .nav {
         font-size: 1.05rem;
     }
-    .my-money,
-    .about,
-    .only-breath-it {
-        border-radius: .85rem;
-    }
     .front {
         padding: 0.55rem 0.65rem;
-        width: 6rem;
-        border-radius: .85rem;
+        width: 8rem;
         font-size: 1.05rem;
+    }
+    nav .button-nav {
+        padding: 1rem 0.5rem 1rem 1rem;
     }
     /* ------------------------------------------- */
 
@@ -417,6 +480,9 @@ hr {
         display: flex;
     }
 
+    #cards{
+        bottom: 3rem;
+    }
     #cards .card-incomes,
     #cards .card-expenses {
         width: 335px;
@@ -427,7 +493,8 @@ hr {
     }
 
     footer {
-        padding: 2.25rem 0.85rem 0 0;
+        top: 4rem;
+        width: 55rem;
         font-size: 1rem;
     }
 }
