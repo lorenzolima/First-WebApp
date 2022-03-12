@@ -105,7 +105,16 @@
                     <div class="input-group">
                         <label class="sr-only" for="amount">Value</label>
                         <input type="number" id="amount" name="amount" placeholder="0.00" step="0.01">
-                        <small class="help">Use the negative sign (-) for Expenses</small>
+                        <small class="help">Determine the type of transaction:</small>
+                    </div>
+
+                    <div class="selector">
+                        <div onclick="Modal.income()" class="button-income">
+                            <p>Income</p>
+                        </div>
+                        <div onclick="Modal.expense()" class="button-expense">
+                            <p>Expense</p>
+                        </div>
                     </div>
 
                     <div class="input-group">

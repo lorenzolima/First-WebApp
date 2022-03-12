@@ -7,6 +7,7 @@
     --yellow: #F2C641; /*#F2C641*/
     --lightyellow: #f5da8a;
     --red: #bc4749;
+    --black: #232426;
 }
 
 
@@ -201,6 +202,7 @@ h2 {
 }
 
 /* ------------------ Cards ----------------- */
+
 #cards {
     display: block;
     position: relative;
@@ -210,9 +212,9 @@ h2 {
     margin: 0 auto 0 auto;
     background: var(--white);
 
-    border: 2px solid #232426;
+    border: 2px solid var(--black);
     border-radius: 1.85rem;
-    box-shadow: .65rem .65rem #232425;
+    box-shadow: .65rem .65rem var(--black);
 }
 #cards .card-total{
     background: var(--white);
@@ -235,7 +237,7 @@ h2 {
 .card {
     padding: 0.75rem 1.25rem;
     border-radius: .65rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     border: 2px solid #363432;
 
     background: var(--white);
@@ -357,7 +359,7 @@ img#remove-data {
     font-weight: bolder;
 }
 
-/* -------------------- form -------------------- */
+/* ->->->->->->->->->-> form  <-<-<-<-<-<-<-<-<-<- */
 #form {
     max-width: 500px;
 }
@@ -370,8 +372,57 @@ input {
     border: 2px solid #363432;
     border-radius: .65rem;
     padding: 0.8rem;
-    width: 100%;
+    width: 
+    100%;
 }
+
+/* --------- selectors income/expense --------*/
+.selector {
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+
+    padding-top: 0.5rem;
+}
+.selector div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Montserrat';
+    font-size: 12px;
+
+    width: 35%;
+    height: 2rem;
+    cursor: pointer;
+    border: 2px solid var(--black);
+    border-radius: .65rem;
+
+    color: var(--black);
+    background: var(--white);
+    caret-color: rgba(0,0,0,0);
+}
+
+.selector .button-income:hover {
+    color: var(--white);
+    background: var(--green);
+}
+.selector .button-expense:hover {
+    color: var(--white);
+    background: var(--red);
+}
+
+.button-income.button-active {
+    color: var(--white);
+    background: var(--green);
+}
+.button-expense.button-active {
+    color: var(--white);
+    background: var(--red);
+}
+
+/* ----------------- inputs ----------------- */
+
 .input-group {
     margin-top: 0.8rem;
 }
@@ -448,7 +499,7 @@ footer {
     header {
         padding-bottom: 10rem;
     }
-    /* ------------------- logo ------------------- */
+    /* ->->->->->->->->->-> logo <-<-<-<-<-<-<-<-<-<- */
     a.logo-a {
         display: inline-block;
         top: -3.5rem;
@@ -459,7 +510,7 @@ footer {
         height: 2.75rem;
     }
 
-    /* ------------------- nav ------------------- */
+    /* ->->->->->->->->->-> nav <-<-<-<-<-<-<-<-<-<- */
     nav {
         padding: .85rem 4rem;
         justify-content: end;
@@ -477,12 +528,12 @@ footer {
         padding: 1rem 0.5rem 1rem 1rem;
     }
 
-    /* ---------------- balance ---------------- */
+    /* ->->->->->->->->-> balance <-<-<-<-<-<-<-<-<- */
     #balance {
         display: flex;
     }
 
-    /* ---------------- cards ---------------- */
+    /* ->->->->->->->->-> cards <-<-<-<-<-<-<-<-<- */
     #cards{
         padding: 4rem;
         width: 100%;
@@ -495,6 +546,7 @@ footer {
         font-size: 1.5rem;
     }
     .card {
+        margin-bottom: 1rem;
         padding: 1.25rem 2.5rem;
     }
     .card h3{
@@ -517,7 +569,7 @@ footer {
         width: 2.15rem;
     }
 
-    /* ---------------- data-table ---------------- */
+    /* ->->->->->->->->->-> data-table <-<-<-<-<-<-<-<-<-<- */
     #data-table {
         height: 19rem;
     }
@@ -534,7 +586,7 @@ footer {
         width: 20px;
     }
 
-    /* ---------------- footer ---------------- */
+    /* ->->->->->->->->->-> footer <-<-<-<-<-<-<-<-<-<- */
     footer {
         position: fixed;
         bottom: 0.5rem;
@@ -550,11 +602,23 @@ footer {
         border-top: 1px solid rgb(203, 204, 204);
     }
 
-    /* ---------------- modal ---------------- */        
+    /* ->->->->->->->->->-> modal <-<-<-<-<-<-<-<-<-<- */        
     .modal {
         padding: 2rem;
         max-width: 500px; 
         width: 90%;
+    }
+
+    .selector {
+        gap: 2.5rem;
+    
+        padding-top: 0.5rem;
+    }
+    .selector div {
+        width: 20%;
+        height: 2.5rem;
+        font-size: 12px;
+
     }
 
 }

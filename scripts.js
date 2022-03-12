@@ -10,7 +10,22 @@ const Modal = {
         transaction = document.querySelector('.modal-overlay')
         transaction.classList.remove('active')
         //alert('Close modal!')
+    },
+    income(){
+        selection = document.querySelector('.button-income')
+        disable = document.querySelector('.button-expense')
+
+        selection.classList.add('button-active')
+        disable.classList.remove('button-active')
+    },
+    expense(){
+        selection = document.querySelector('.button-expense')
+        disable = document.querySelector('.button-income')
+
+        selection.classList.add('button-active')
+        disable.classList.remove('button-active')
     }
+
 }
 
 /*
@@ -76,7 +91,6 @@ const DOM = {
         const tr = document.createElement('tr')
         tr.classList.add('items')
         tr.dataset.index = index
-        console.log(tr.dataset.index)
 
         tr.innerHTML = DOM.innerHTMLTransaction(transaction, index)
 
@@ -167,6 +181,11 @@ const Form = {
     formatValues() {
         let {description, amount, date} = Form.getValues()
 
+        selection1 = document.querySelector('.button-expense')
+        if (selection1.classList.contains('button-active')) {
+            amount = "-" + amount
+        }
+
         amount = Utils.formatAmount(amount)
         date = Utils.formatDate(date)
 
@@ -197,8 +216,7 @@ const Form = {
             Form.clearFields()
             Modal.close()
             App.reload()
-        }
-        catch (error) {
+        } catch (error) {
             alert(error.message)
         }
     }
