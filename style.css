@@ -55,7 +55,7 @@ body {
 }
 
 header {
-    padding-bottom: 5rem;
+    padding-bottom: 8rem;
 
     background: linear-gradient(to left top, #f6d836, #f5d339, #f4cf3c, #f3ca3e, #f2c641);}
 /* ------------------ Navigation Buttons ------------------ */
@@ -63,9 +63,8 @@ nav {
     position: relative;
     display: flex;
     flex-direction: row;
-    gap: 4rem;
     padding: .85rem 2rem;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
 
     background-color: var(--white);
@@ -116,11 +115,11 @@ nav .page-nav {
 .front {
     display: block;
     padding: 0.45rem 0.55rem;
-    width: 5rem;
+    width: 6rem;
     border-radius: 4rem;
-    font-size: 0.85rem;
-    font-family: 'Indie Flower';
-    font-weight: bolder;
+    font-size: 12px;
+    font-family: 'Montserrat';
+    font-weight: 100;
     transform: translateY(0px);
 
 
@@ -139,22 +138,23 @@ nav .page-nav {
 
 /* ------------------ Logo ------------------ */
 a.logo-a {
+    display: block;
     position: relative;
-    display: inline-flex;
-
-    left: 1.75rem;
-    bottom: 2.75rem;
+    text-align: center;
+    margin: auto;
+    top: 3.5rem;
+    
     padding-bottom: 2rem;
 }
 a img {
-    width: 10rem;
-    height: 1.825rem;
+    width: 11.5rem;
+    height: 2rem;
 }
 
 /* -------------- Links & Buttons ------------- */
 .new {
     font-weight: bolder;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 
     text-decoration: none;
     color: var(--yellow);
@@ -215,15 +215,17 @@ h2 {
 /* ------------------ Cards ----------------- */
 
 #cards {
+    display: block;
     position: relative;
-    padding: 3rem;
+    padding: 2.5rem;
     bottom: 1rem;
-    width: 100%;
+    width: 85%;
+    margin: 0 auto 0 auto;
     background: var(--white);
 
     border: 2px solid #232426;
     border-radius: 1.85rem;
-    box-shadow: .65rem .65rem #232426;
+    box-shadow: .65rem .65rem #232425;
 }
 #cards .card-total{
     background: var(--white);
@@ -236,15 +238,15 @@ h2 {
 
 #cards h3 {
     font-weight: normal;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 #cards p {
     font-weight: bolder;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 .card {
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 1.25rem;
     border-radius: .65rem;
     margin-bottom: 1rem;
     border: 2px solid #363432;
@@ -260,15 +262,24 @@ h2 {
     font-size: 1rem;
 }
 
+.icons{
+    width: 22px;
+}
+
+.card-total .icons{
+    width: 22px;
+}
+
 /* ------------------ Table Transactions ----------------- */
 #data-table {
     display: block;
     overflow-x: auto;
     overflow-y: visible;
-    max-height: 18rem;
+    height: 15rem;
 
     color: var(--color-dark);
 }
+
 table {
     width: 100%;
     border-spacing: 0 0.25rem;
@@ -285,15 +296,16 @@ table tbody tr td:last-child {
 }
 table th{
     text-align: left;
-    font-size: 1.05rem;
+    font-size: 12px;
     font-weight: normal;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1.5rem;
 
     background: white;
 }
 table td{
     font-weight: 100;
-    padding: 1rem 2rem;
+    font-size: 10px;
+    padding: 0.5rem 1.5rem;
 
     background: white;
 }
@@ -319,6 +331,10 @@ td.income{
     color: var(--green);
 }
 
+img#remove-data {
+    width: 14px;
+}
+
 /* >>>>>>>>>>>>>>>>>>>>> MODAL <<<<<<<<<<<<<<<<<<<<*/
 .modal-overlay {
     display: flex;
@@ -326,13 +342,14 @@ td.income{
     justify-content: center;
 
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     top: 0;
     opacity: 0;
     visibility: hidden;
 
     background-color: rgba(0,0,0,0.7);
+    z-index: 2;
 }
 
 .modal-overlay.active {
@@ -341,8 +358,9 @@ td.income{
 }
 .modal {
     padding: 2rem;
-    max-width: 500px; 
+    max-width: 300px; 
     width: 90%;
+
     border-radius: 1.85rem;
     box-shadow: .45rem .45rem var(--yellow);
 
@@ -420,18 +438,17 @@ input {
 /* >>>>>>>>>>>>>>>>>>>> FOOTER <<<<<<<<<<<<<<<<<<<<*/
 
 footer {
-    position: relative;
-    top: 2rem;
-    width: 30rem;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    padding-top: 0.25rem;
+    display: block;
+    position: fixed;
+    bottom: 0.5rem;
+    left: 1.15rem;
+    right: 0px;
+    margin-bottom: 0px;
+    width: auto;
 
-    opacity: 0.5;
-    font-size: 12px;
+    opacity: 0.75;
+    font-size: 10px;
 
-    border-top: 1px solid rgb(203, 204, 204);
     color: black;
 }
 
@@ -441,21 +458,25 @@ footer {
         font-size: 87.5%;
     }
 
+    header {
+        padding-bottom: 10rem;
+    }
     /* ------------------- logo ------------------- */
     a.logo-a {
-        left: 4.5rem;
-        bottom: 3rem;
+        display: inline-block;
+        top: -3.5rem;
+        left: 10rem;
     }
     a img {
-        left: 12rem;
-        bottom: 3rem;
-        width: 20rem;
-        height: 3.75rem;
+        width: 15rem;
+        height: 2.75rem;
     }
 
     /* ------------------- nav ------------------- */
     nav {
         padding: .85rem 4rem;
+        justify-content: end;
+        gap: 10rem;
     }
     .nav {
         font-size: 1.05rem;
@@ -468,21 +489,35 @@ footer {
     nav .button-nav {
         padding: 1rem 0.5rem 1rem 1rem;
     }
-    /* ------------------------------------------- */
 
-    a.logo-a {
-        position: relative;
-        display: inline-flex;
-        height: 12rem;
-    }
-
+    /* ---------------- balance ---------------- */
     #balance {
         display: flex;
     }
 
+    /* ---------------- cards ---------------- */
     #cards{
+        padding: 4rem;
+        width: 100%;
         bottom: 3rem;
     }
+    #cards h3 {
+        font-size: 1.25rem;
+    }
+    #cards p {
+        font-size: 1.5rem;
+    }
+    .card {
+        padding: 1.25rem 2.5rem;
+    }
+    .card h3{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: normal;
+        font-size: 1.5rem;
+    }
+
     #cards .card-incomes,
     #cards .card-expenses {
         width: 335px;
@@ -491,10 +526,48 @@ footer {
         display: flex;
         justify-content: space-between;
     }
-
-    footer {
-        top: 4rem;
-        width: 55rem;
-        font-size: 1rem;
+    .icons {
+        width: 2.15rem;
     }
+
+    /* ---------------- data-table ---------------- */
+    #data-table {
+        height: 19rem;
+    }
+
+    table th{
+        font-size: 16px;
+        padding: 1rem 2rem;
+    }
+    table td{
+        font-size: 14px;
+        padding: 1rem 2rem;
+    }
+    img#remove-data {
+        width: 20px;
+    }
+
+    /* ---------------- footer ---------------- */
+    footer {
+        position: fixed;
+        bottom: 0.5rem;
+        left: 0px;
+        right: 0px;
+        width: 55rem;
+        margin: 0 auto 0 auto;
+        padding-top: 5px;
+        
+        font-size: 12px;
+        text-align: center;
+
+        border-top: 1px solid rgb(203, 204, 204);
+    }
+
+    /* ---------------- modal ---------------- */        
+    .modal {
+        padding: 2rem;
+        max-width: 500px; 
+        width: 90%;
+    }
+
 }
