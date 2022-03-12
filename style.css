@@ -7,18 +7,6 @@
     --yellow: #F2C641; /*#F2C641*/
     --lightyellow: #f5da8a;
     --red: #bc4749;
-    --r-localnav-height: 52px;
-    --r-localnav-stacked-height: 66px;
-    --r-localnav-gn-height: var(--r-globalnav-height, 44px);
-    --r-localnav-viewport-large-min-width: 1024px;
-    --r-localnav-viewport-large-query: (min-width: 1024px);
-    --r-localnav-viewport-medium-min-width: 834px;
-    --r-localnav-viewport-medium-max-width: 1023px;
-    --r-localnav-viewport-medium-query: (min-width: 834px);
-    --r-localnav-viewport-small-min-width: 320px;
-    --r-localnav-viewport-small-max-width: 833px;
-    --r-localnav-viewport-small-query: (min-width: 320px);
-
 }
 
 
@@ -213,7 +201,6 @@ h2 {
 }
 
 /* ------------------ Cards ----------------- */
-
 #cards {
     display: block;
     position: relative;
@@ -275,7 +262,7 @@ h2 {
     display: block;
     overflow-x: auto;
     overflow-y: visible;
-    height: 15rem;
+    height: 10rem;
 
     color: var(--color-dark);
 }
